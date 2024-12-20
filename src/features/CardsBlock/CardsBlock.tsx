@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
-
 import { Card } from './Card'
 import { FiltersBlock } from './FiltersBlock'
 import { useQuery } from '@tanstack/react-query'
-import { UserProfile } from '../type'
+import { BabeProfile } from '../type'
+import { Skeleton } from './Skeleton'
 
 export const CardsBlock = () => {
-	const { data: card } = useQuery({
+	const { data: card, isLoading } = useQuery({
 		queryKey: ['babeList'],
-		queryFn: async (): Promise<UserProfile[]> => {
+		queryFn: async (): Promise<BabeProfile[]> => {
 			const response = await fetch('https://babesranker.com/api/core/babe/')
 			return await response.json()
 		}
@@ -16,7 +16,8 @@ export const CardsBlock = () => {
 
 	const [selectedLocation, setSelectedLocation] = useState('')
 	const [selectedType, setSelectedType] = useState('')
-	const [sortOrder, setSortOrder] = useState('rateHigh')
+	const [sortOrder, setSortOrder] = useState('highestRated')
+
 	// Фильтрация и сортировка данных
 	const filteredData =
 		card &&
@@ -28,15 +29,18 @@ export const CardsBlock = () => {
 				)
 			})
 			.sort((a, b) => {
-				if (sortOrder === 'rateHigh') return b.rank - a.rank
-				if (sortOrder === 'rateLow') return a.rank - b.rank
-				if (sortOrder === 'nameA') return a.location.localeCompare(b.location)
-				if (sortOrder === 'nameZ') return b.location.localeCompare(a.location)
+				if (sortOrder === 'highestRated') return b.rank - a.rank
+				if (sortOrder === 'lowestRated') return a.rank - b.rank
+				if (sortOrder === 'nameAscending')
+					return a.location.localeCompare(b.location)
+				if (sortOrder === 'nameDescending')
+					return b.location.localeCompare(a.location)
 				return 0
 			})
 
 	const cardList =
-		card && card?.length > 100 ? filteredData.slice(0, 100) : filteredData
+		card && card.length > 100 ? filteredData.slice(0, 100) : filteredData
+
 	return (
 		<div className='mt-20 w-full flex flex-col'>
 			<FiltersBlock
@@ -44,10 +48,15 @@ export const CardsBlock = () => {
 				setSelectedType={setSelectedType}
 				setSortOrder={setSortOrder}
 			/>
-			<div className='grid grid-cols-[repeat(auto-fill,_minmax(204px,_0fr))] justify-between gap-6'>
-				{cardList?.map(card => {
-					return <Card key={card?.id} card={card} />
-				})}
+			<div className='grid grid-cols-[repeat(auto-fill,_minmax(12.75rem,_0fr))] justify-between gap-6'>
+				{isLoading
+					? // Отображаем скелетоны, пока данные загружаются
+						Array.from({ length: 10 }).map((_, index) => (
+							<Skeleton key={index} className='h-60' />
+						))
+					: cardList?.map(card => {
+							return <Card key={card.id} card={card} />
+						})}
 			</div>
 		</div>
 	)

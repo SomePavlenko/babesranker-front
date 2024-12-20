@@ -1,16 +1,15 @@
-export enum CategoryEnum {
-	MILF = 'MILF',
-	Teen = 'Teen',
-	Cougar = 'Cougar',
-	BBW = 'BBW',
-	Amateur = 'Amateur',
-	Ebony = 'Ebony',
-	Asian = 'Asian',
-	Latina = 'Latina',
-	Lesbian = 'Lesbian'
-}
+export type Category =
+	| 'MILF'
+	| 'Teen'
+	| 'Cougar'
+	| 'BBW'
+	| 'Amateur'
+	| 'Ebony'
+	| 'Asian'
+	| 'Latina'
+	| 'Lesbian'
 
-export interface UserProfile {
+export interface BabeProfile {
 	id: number
 	name: string
 	socialUsername?: string
@@ -18,6 +17,6 @@ export interface UserProfile {
 	redditUrl?: string
 	onlyfansUrl?: string
 	location?: string
-	category?: CategoryEnum
+	category?: Category
 	rank?: number
 }

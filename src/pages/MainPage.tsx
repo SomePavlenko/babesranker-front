@@ -7,7 +7,7 @@ export const MainPage = () => {
 	return (
 		<div className='h-screen flex flex-col items-center'>
 			<Header />
-			<div className='max-w-8xl w-screen flex-col bg-main pl-5 pr-5'>
+			<div className='max-w-8xl w-screen flex-col bg-primary px-5'>
 				<CardsBlock />
 			</div>
 		</div>
