@@ -1,12 +1,16 @@
 import React from 'react'
 
 import './App.css'
+import { MainPage } from './pages'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 function App() {
+	const queryClient = new QueryClient()
 	return (
-		<div className='App'>
-			<h1 className='text-3xl font-bold underline'>1 Learn React</h1>
-			<h1 className='text-2xl'>1 Learn React</h1>
+		<div className='w-full bg-main'>
+			<QueryClientProvider client={queryClient}>
+				<MainPage />
+			</QueryClientProvider>
 		</div>
 	)
 }
