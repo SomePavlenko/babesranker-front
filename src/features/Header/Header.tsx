@@ -8,9 +8,9 @@ export const Header = () => {
 				alt='banner'
 				className='w-full h-full object-cover object-center'
 			/>
-			<p className='z-30 absolute top-1/2 left-1/4  text-4xl font-bold text-white'>
-				Babes ranker
-			</p>
+			<div className='z-30 absolute top-1/4 left-[15%] text-4xl font-bold text-white [text-shadow:_0_2px_3px_rgb(0_0_0_/_50%)]'>
+				BabesRanker
+			</div>
 		</div>
 	)
 }

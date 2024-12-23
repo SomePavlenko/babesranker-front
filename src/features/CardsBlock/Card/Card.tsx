@@ -39,7 +39,7 @@ export const Card: React.FC<Props> = ({ card }) => {
 	const voteHandler = async (voteType: 'up' | 'down') => {
 		const timeStamp = canVote()
 		if (!timeStamp) {
-			alert('You can vote once per day')
+			// alert('You can vote once per day')
 			return
 		}
 
@@ -82,14 +82,14 @@ export const Card: React.FC<Props> = ({ card }) => {
 				<a
 					href={'https://' + cardData.redditUrl}
 					target='blank'
-					className='w-full h-10 p-0 bg-primaryButtonColor text-black border-0 font-bold text-m cursor-pointer transition-colors duration-300 ease flex items-center justify-center leading-none text-center'
+					className='rounded-sm w-full h-10 p-0 bg-primaryButtonColor text-black border-0 font-bold text-m cursor-pointer transition-colors duration-300 ease flex items-center justify-center leading-none text-center'
 				>
 					Reddit
 				</a>
 				<a
 					href={'https://' + cardData.onlyfansUrl}
 					target='blank'
-					className='w-full h-10 p-0 bg-primaryButtonColor text-black border-0 font-bold text-m cursor-pointer transition-colors duration-300 ease flex items-center justify-center leading-none text-center'
+					className='rounded-sm w-full h-10 p-0 bg-primaryButtonColor text-black border-0 font-bold text-m cursor-pointer transition-colors duration-300 ease flex items-center justify-center leading-none text-center'
 				>
 					Onlyfans
 				</a>
