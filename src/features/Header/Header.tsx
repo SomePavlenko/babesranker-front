@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Header = () => {
 	return (
-		<div className='h-34 w-full overflow-hidden relative z-20'>
+		<div className='h-34 w-full relative z-20'>
 			<img
 				src={`${process.env.PUBLIC_URL}/images/banner.png`}
 				alt='banner'

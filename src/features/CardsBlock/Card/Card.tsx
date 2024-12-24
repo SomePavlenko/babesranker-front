@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
+
+import { useVoteBabe } from '../../../hooks/useVoteBabe'
+import { colors } from '../../colors'
 import { BabeProfile } from '../../type'
 import { VoteDownIcon, VoteUpIcon } from './Icons'
-import { colors } from '../../colors'
-import { useVoteBabe } from '../../../hooks/useVoteBabe'
 
 interface Props {
 	card: BabeProfile
@@ -71,14 +72,14 @@ export const Card: React.FC<Props> = ({ card }) => {
 	}
 
 	return (
-		<div className='w-51 flex flex-col items-center justify-between bg-secondColor rounded-lg p-2.5 shadow-md border border-primaryBorder h-60 text-center'>
+		<div className='flex flex-col items-center justify-between bg-secondColor rounded-lg p-2.5 shadow-md border border-primaryBorder h-68 sm:h-60 text-center'>
 			<h2 className='text-white m-0 mb-1.25 text-[1.2em] font-bold'>
 				{cardData.name}
 			</h2>
 			<div className='w-full h-25 flex items-center justify-center mb-1.25 overflow-hidden'>
 				<img src={cardData.photo} alt={cardData.name} />
 			</div>
-			<div className='flex gap-4 w-full'>
+			<div className='flex flex-wrap sm:flex-nowrap gap-2 py-2 sm:gap-4 sm:py-0 w-full'>
 				<a
 					href={'https://' + cardData.redditUrl}
 					target='blank'

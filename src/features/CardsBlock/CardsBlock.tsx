@@ -1,15 +1,18 @@
+import { useQuery } from '@tanstack/react-query'
 import React, { useState } from 'react'
+
+import { BabeProfile } from '../type'
 import { Card } from './Card'
 import { FiltersBlock } from './FiltersBlock'
-import { useQuery } from '@tanstack/react-query'
-import { BabeProfile } from '../type'
 import { Skeleton } from './Skeleton'
 
 export const CardsBlock = () => {
 	const { data: card, isLoading } = useQuery({
 		queryKey: ['babeList'],
 		queryFn: async (): Promise<BabeProfile[]> => {
-			const response = await fetch('https://babesranker.com/api/core/babe/')
+			const response = await fetch(
+				`${process.env.REACT_APP_BASE_API_URL}/api/core/babe/`
+			)
 			return await response.json()
 		}
 	})
@@ -41,22 +44,30 @@ export const CardsBlock = () => {
 	const cardList =
 		card && card.length > 100 ? filteredData.slice(0, 100) : filteredData
 
+	const getCardBlock = () => {
+		if (isLoading) {
+			return Array.from({ length: 10 }).map((_, index) => (
+				<Skeleton key={index} className='h-60' />
+			))
+		}
+		return cardList?.map(card => {
+			return <Card key={card.id} card={card} />
+		})
+	}
 	return (
-		<div className='mt-20 w-full flex flex-col'>
+		<div className='sm:mt-20 mt-8 w-full flex flex-col'>
 			<FiltersBlock
 				setSelectedLocation={setSelectedLocation}
 				setSelectedType={setSelectedType}
 				setSortOrder={setSortOrder}
 			/>
-			<div className='grid grid-cols-[repeat(auto-fill,_minmax(12.75rem,_0fr))] justify-between gap-6'>
-				{isLoading
-					? // Отображаем скелетоны, пока данные загружаются
-						Array.from({ length: 10 }).map((_, index) => (
-							<Skeleton key={index} className='h-60' />
-						))
-					: cardList?.map(card => {
-							return <Card key={card.id} card={card} />
-						})}
+			{!cardList?.length && !isLoading && (
+				<p className='w-full flex justify-center mt-12 left-1/4 text-white'>
+					The selected Location and Type don&apos;t have models yet
+				</p>
+			)}
+			<div className='grid grid-cols-[repeat(auto-fill,_minmax(45%,_0fr))] sm:grid-cols-[repeat(auto-fill,_minmax(12.75rem,_0fr))] justify-between gap-6'>
+				{getCardBlock()}
 			</div>
 		</div>
 	)

@@ -1,5 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
+
 import { BabeProfile } from '../features/type'
 
 export const useVoteBabe = (voteType: 'up' | 'down') => {
@@ -11,7 +12,7 @@ export const useVoteBabe = (voteType: 'up' | 'down') => {
 			'babeList'
 		],
 		mutationFn: async (id: number) => {
-			const url = `https://babesranker.com/api/core/vote-${voteType}/${id}`
+			const url = `${process.env.REACT_APP_BASE_API_URL}/api/core/vote-${voteType}/${id}`
 			return axios.get(url)
 		},
 		onMutate: async (id: number) => {
