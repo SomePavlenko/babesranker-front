@@ -18,6 +18,12 @@ RUN npm run build
 # Этап развертывания
 FROM nginx:alpine
 
+# Remove default Nginx config
+RUN rm /etc/nginx/conf.d/default.conf
+
+# Copy custom Nginx config
+COPY nginx.conf /etc/nginx/conf.d
+
 # Копируем собранные файлы из предыдущего этапа
 COPY --from=build /app/build /usr/share/nginx/html
 
