@@ -2,13 +2,13 @@
  
 BabesRanker
 
-# Локальный запуск
+# Local run
 
-## Установка пакетов
+## Installing Packages
 
 ### `yarn install`
 
-## Запуск
+## Run
 
 ### `yarn start`
 
@@ -18,11 +18,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-# Билд и запуск в докере
-из корня проекта
-## Билд
+# Build and run in docker
+from the root of the project
+## Build
 ### `docker build -t babesranker-front .`
-## запуск
+## Run
 ### `docker run -p 3001:80 babesranker-front`
 
-запуск на 3001 порту
+run on port 3001
