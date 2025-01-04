@@ -81,14 +81,14 @@ export const Card: React.FC<Props> = ({ card }) => {
 			</div>
 			<div className='flex flex-wrap sm:flex-nowrap gap-2 py-2 sm:gap-4 sm:py-0 w-full'>
 				<a
-					href={'https://' + cardData.redditUrl}
+					href={cardData.redditUrl}
 					target='blank'
 					className='rounded-sm w-full h-10 p-0 bg-primaryButtonColor text-black border-0 font-bold text-m cursor-pointer transition-colors duration-300 ease flex items-center justify-center leading-none text-center'
 				>
 					Reddit
 				</a>
 				<a
-					href={'https://' + cardData.onlyfansUrl}
+					href={cardData.onlyfansUrl}
 					target='blank'
 					className='rounded-sm w-full h-10 p-0 bg-primaryButtonColor text-black border-0 font-bold text-m cursor-pointer transition-colors duration-300 ease flex items-center justify-center leading-none text-center'
 				>
