@@ -24,18 +24,18 @@ export const FiltersBlock: React.FC<Props> = ({
 	}
 	return (
 		<div className=' flex justify-start min-h-20 bg-secondColor rounded-lg px-3 py-2 sm:pl-12 shadow-md border border-primaryBorder mb-5'>
-			<form className='flex justify-start flex-wrap sm:flex-nowrap gap-4 sm:gap-12 content-center w-full'>
-				<div className='flex flex-col flex-wrap max-w-80 w-full'>
+			<form className='flex justify-start flex-wrap sm:flex-nowrap gap-2 sm:gap-12 content-center w-full'>
+				<div className='flex sm:flex-col items-end justify-between flex-wrap sm:max-w-80 w-full sm:items-stretch'>
 					<label
 						htmlFor='location'
-						className='block mb-1 font-medium text-m text-white'
+						className='block sm:mb-1 font-medium text-m text-white'
 					>
 						Location
 					</label>
 					<select
 						id='location'
 						onChange={handleLocationChange}
-						className='appearance-none bg-primary rounded-md p-2.5 shadow-md border border-primaryBorder  text-white text-sm h-9  focus:ring-blue-500 focus:border-blue-500 block px-3 py-2 '
+						className='appearance-none bg-primary rounded-md p-2.5 shadow-md border border-primaryBorder  text-white text-sm h-9  focus:ring-blue-500 focus:border-blue-500 block px-3 py-2 sm:w-full w-3/4'
 					>
 						<option value=''>Choose a location</option>
 						<option value='USA'>USA</option>
@@ -44,17 +44,17 @@ export const FiltersBlock: React.FC<Props> = ({
 						<option value='Other'>Other</option>
 					</select>
 				</div>
-				<div className='flex flex-col flex-wrap max-w-80 w-full'>
+				<div className='flex sm:flex-col items-end justify-between flex-wrap sm:max-w-80 w-full sm:items-stretch'>
 					<label
 						htmlFor='type'
-						className='block mb-1 font-medium text-m text-white'
+						className='block sm:mb-1 font-medium text-m text-white'
 					>
 						Type
 					</label>
 					<select
 						id='type'
 						onChange={handleTypeChange}
-						className='appearance-none bg-primary rounded-md p-2.5 shadow-md border border-primaryBorder  text-white text-sm h-9  focus:ring-blue-500 focus:border-blue-500 block px-3 py-2 '
+						className='appearance-none bg-primary rounded-md p-2.5 shadow-md border border-primaryBorder  text-white text-sm h-9  focus:ring-blue-500 focus:border-blue-500 block px-3 py-2 sm:w-full w-3/4'
 					>
 						<option value=''>Choose a type</option>
 						<option value='MILF'>MILF</option>
@@ -68,17 +68,17 @@ export const FiltersBlock: React.FC<Props> = ({
 						<option value='Lesbian'>Lesbian</option>
 					</select>
 				</div>
-				<div className='flex flex-col flex-wrap max-w-80 w-full'>
+				<div className='flex sm:flex-col items-end justify-between flex-wrap sm:max-w-80 w-full sm:items-stretch'>
 					<label
 						htmlFor='sort'
-						className='block mb-1 font-medium text-m text-white'
+						className='block sm:mb-1 font-medium text-m text-white'
 					>
 						Sort by
 					</label>
 					<select
 						id='sort'
 						onChange={handleSortChange}
-						className='appearance-none bg-primary rounded-md p-2.5 shadow-md border border-primaryBorder  text-white text-sm h-9  focus:ring-blue-500 focus:border-blue-500 block px-3 py-2 '
+						className='appearance-none bg-primary rounded-md p-2.5 shadow-md border border-primaryBorder  text-white text-sm h-9  focus:ring-blue-500 focus:border-blue-500 block px-3 py-2 sm:w-full w-3/4'
 					>
 						<option value='highestRated'>Highest rated</option>
 						<option value='lowestRated'>Lowest rated</option>

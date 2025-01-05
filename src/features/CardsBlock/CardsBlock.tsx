@@ -55,7 +55,7 @@ export const CardsBlock = () => {
 		})
 	}
 	return (
-		<div className='sm:mt-20 mt-8 w-full flex flex-col'>
+		<div className='sm:mt-20 mt-4 w-full flex flex-col'>
 			<FiltersBlock
 				setSelectedLocation={setSelectedLocation}
 				setSelectedType={setSelectedType}
@@ -66,7 +66,7 @@ export const CardsBlock = () => {
 					The selected Location and Type don&apos;t have models yet
 				</p>
 			)}
-			<div className='grid grid-cols-[repeat(auto-fill,_minmax(45%,_0fr))] sm:grid-cols-[repeat(auto-fill,_minmax(12.75rem,_0fr))] justify-between gap-6'>
+			<div className='grid grid-cols-[repeat(auto-fill,_minmax(46.5%,_0fr))] sm:grid-cols-[repeat(auto-fill,_minmax(12.75rem,_0fr))] justify-between gap-6'>
 				{getCardBlock()}
 			</div>
 		</div>

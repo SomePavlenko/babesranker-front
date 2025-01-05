@@ -8,10 +8,12 @@ module.exports = {
 				34: '8.5rem',
 				25: '6.25rem',
 				60: '15rem',
-				7.5: '1.875rem'
+				7.5: '1.875rem',
+				84: '21rem'
 			},
 			width: {
-				51: '12.75rem'
+				51: '12.75rem',
+				37.5: '9.375rem'
 			},
 			backgroundColor: {
 				primary: colors.primary,
@@ -35,6 +37,9 @@ module.exports = {
 			},
 			fontSize: {
 				m: '0.875rem'
+			},
+			aspectRatio: {
+				'3/4': '3 / 4'
 			}
 		}
 	},
