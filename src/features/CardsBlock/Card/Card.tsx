@@ -76,8 +76,8 @@ export const Card: React.FC<Props> = ({ card }) => {
 			<h2 className='text-white m-0 mb-1.25 text-[1.2em] font-bold'>
 				{cardData.name}
 			</h2>
-			<div className='w-37.5 aspect-[3/4] flex items-center justify-center mb-1.25 overflow-hidden'>
-				<img src={cardData.photo} alt={cardData.name} />
+			<div className='w-37.5 h-[200px] aspect-[3/4] flex items-center justify-center mb-1.25 overflow-hidden'>
+				<img src={cardData.photo} alt={cardData.name} className='h-[200px] max-w-[200px]' />
 			</div>
 			<div className='flex flex-wrap sm:flex-nowrap gap-2 py-2 sm:gap-4 sm:py-0 w-full'>
 				<a
