@@ -1,13 +1,12 @@
 export type Category =
 	| 'MILF'
 	| 'Teen'
-	| 'Cougar'
 	| 'BBW'
-	| 'Amateur'
 	| 'Ebony'
 	| 'Asian'
 	| 'Latina'
-	| 'Lesbian'
+	| 'Big Boobs'
+	| 'Big Ass'
 
 export interface BabeProfile {
 	id: number
