@@ -59,12 +59,12 @@ export const FiltersBlock: React.FC<Props> = ({
 						<option value=''>Choose a type</option>
 						<option value='MILF'>MILF</option>
 						<option value='Teen'>Teen</option>
-						<option value='BBW'>Cougar</option>
-						<option value='Ebony'>BBW</option>
-						<option value='Asian'>Amateur</option>
-						<option value='Latina'>Ebony</option>
-						<option value='Big Boobs'>Asian</option>
-						<option value='Big Ass'>Latina</option>
+						<option value='BBW'>BBW</option>
+						<option value='Ebony'>Ebony</option>
+						<option value='Asian'>Asian</option>
+						<option value='Latina'>Latina</option>
+						<option value='Big Boobs'>Big Boobs</option>
+						<option value='Big Ass'>Big Ass</option>
 					</select>
 				</div>
 				<div className='flex sm:flex-col items-end justify-between flex-wrap sm:max-w-80 w-full sm:items-stretch'>
