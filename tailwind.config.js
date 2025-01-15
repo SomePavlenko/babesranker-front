@@ -18,7 +18,8 @@ module.exports = {
 			backgroundColor: {
 				primary: colors.primary,
 				secondColor: colors.secondary,
-				primaryButtonColor: colors.primaryButtonColor
+				primaryButtonColor: colors.primaryButtonColor,
+				header: colors.header
 			},
 			maxWidth: {
 				'8xl': '88rem'
@@ -40,6 +41,9 @@ module.exports = {
 			},
 			aspectRatio: {
 				'3/4': '3 / 4'
+			},
+			screens: {
+				'2sm': '384px'
 			}
 		}
 	},
