@@ -35,7 +35,7 @@ export const FiltersBlock: React.FC<Props> = ({
 					<select
 						id='location'
 						onChange={handleLocationChange}
-						className='appearance-none bg-primary rounded-md p-2.5 shadow-md border border-primaryBorder  text-white text-sm h-9  focus:ring-blue-500 focus:border-blue-500 block px-3 py-2 sm:w-full w-3/4'
+						className='z-30 appearance-none bg-primary rounded-md p-2.5 shadow-md border border-primaryBorder  text-white text-sm h-9  focus:ring-blue-500 focus:border-blue-500 block px-3 py-2 sm:w-full w-3/4'
 					>
 						<option value=''>Choose a location</option>
 						<option value='USA'>USA</option>
@@ -54,7 +54,7 @@ export const FiltersBlock: React.FC<Props> = ({
 					<select
 						id='type'
 						onChange={handleTypeChange}
-						className='appearance-none bg-primary rounded-md p-2.5 shadow-md border border-primaryBorder  text-white text-sm h-9  focus:ring-blue-500 focus:border-blue-500 block px-3 py-2 sm:w-full w-3/4'
+						className='z-30 appearance-none bg-primary rounded-md p-2.5 shadow-md border border-primaryBorder  text-white text-sm h-9  focus:ring-blue-500 focus:border-blue-500 block px-3 py-2 sm:w-full w-3/4'
 					>
 						<option value=''>Choose a type</option>
 						<option value='MILF'>MILF</option>
@@ -78,7 +78,7 @@ export const FiltersBlock: React.FC<Props> = ({
 					<select
 						id='sort'
 						onChange={handleSortChange}
-						className='appearance-none bg-primary rounded-md p-2.5 shadow-md border border-primaryBorder  text-white text-sm h-9  focus:ring-blue-500 focus:border-blue-500 block px-3 py-2 sm:w-full w-3/4'
+						className='z-30 appearance-none bg-primary rounded-md p-2.5 shadow-md border border-primaryBorder  text-white text-sm h-9  focus:ring-blue-500 focus:border-blue-500 block px-3 py-2 sm:w-full w-3/4'
 					>
 						<option value='highestRated'>Highest rated</option>
 						<option value='lowestRated'>Lowest rated</option>
